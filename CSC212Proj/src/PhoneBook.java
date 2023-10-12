@@ -4,6 +4,7 @@ public class PhoneBook {
 	static LinkedList conts = new LinkedList();
 	static LinkedListEvent events = new LinkedListEvent();
 	
+	
 	public static boolean search_name(String name) {
 		if (conts.empty()) {
 			return false;
@@ -67,6 +68,7 @@ return;
 
 
 		while (!conts.last()) {
+			if(conts.retrieve().getContact_name().equalsIgnoreCase(name))
 System.out.print("Name:" + conts.retrieve().getContact_name()
 		+ "\nPhone Number:" + conts.retrieve().getContact_number()
 		+ "\nEmail Address:" + conts.retrieve().getContact_mail()
@@ -77,6 +79,7 @@ System.out.print("\n");
 
 conts.findNext();
 		}
+		if(conts.retrieve().getContact_name().equalsIgnoreCase(name))
 		System.out.print("Name:" + conts.retrieve().getContact_name()
 				+ "\nPhone Number:" + conts.retrieve().getContact_number()
 				+ "\nEmail Address:" + conts.retrieve().getContact_mail()
@@ -87,6 +90,7 @@ conts.findNext();
 
 	}
 	}
+	
 
 	public static void print_alph() {
 		if (events.empty()) {
@@ -149,10 +153,10 @@ conts.findNext();
 					int contact_phone = input.nextInt();
 					
 					while(search_number(contact_phone)) {
-						System.out.print("Contact is already exists! ");
+						System.out.print("Contact number is already exists! ");
 						
 						System.out.print("Enter the contact's phone number: ");
-						 contact_name = input.next();
+						contact_phone = input.nextInt();
 
 					}
 					System.out.print("Enter the contact's email address: ");

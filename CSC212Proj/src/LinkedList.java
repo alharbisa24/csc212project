@@ -46,13 +46,23 @@ public class LinkedList <T extends Comparable<Contact>>{
             current = head = temp; 
 
         else { 
-        	temp.next = current.next;
-        	temp.previous = current;
-        	if(current.next != null)
-        		current.next.previous = temp;
-        	current.next = temp;
-        	current = temp;
+           
+            Node<Contact> current = head;
+            Node<Contact> tail = null;
+            while (current != null && current.data.getContact_name().compareTo(data.getContact_name()) < 0) {
+            	tail = current;
+                current = current.next;
             }
+       
+            if (tail == null) {
+                temp.next = head;
+                head = temp;
+            } else {
+                temp.next = current;
+                tail.next = temp;
+            }     
+            }
+            
     }
     
     public void remove() {

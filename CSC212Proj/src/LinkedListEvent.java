@@ -45,15 +45,24 @@ public class LinkedListEvent <T extends Comparable<Event>> {
             current = head = temp; 
 
         else { 
-        	temp.next = current.next;
-        	temp.previous = current;
-        	if(current.next != null)
-        		current.next.previous = temp;
-        	current.next = temp;
-        	current = temp;
+           
+            Node<Event> current = head;
+            Node<Event> tail = null;
+            while (current != null && current.data.getEvent_title().compareTo(data.getEvent_title()) < 0) {
+            	tail = current;
+                current = current.next;
             }
-    } 
-    
+       
+            if (tail == null) {
+                temp.next = head;
+                head = temp;
+            } else {
+                temp.next = current;
+                tail.next = temp;
+            }     
+            }
+            
+    }
     public void remove() {
         if(current == head) {
      head = head.next;
