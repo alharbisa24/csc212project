@@ -46,7 +46,7 @@ public class LinkedListEvent <T extends Comparable<Event>> {
 
         else { 
            
-            Node<Event> current = head;
+        	findFirst();
             Node<Event> tail = null;
             while (current != null && current.data.getEvent_title().compareTo(data.getEvent_title()) < 0) {
             	tail = current;

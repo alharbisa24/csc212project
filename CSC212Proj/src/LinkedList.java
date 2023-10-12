@@ -46,8 +46,7 @@ public class LinkedList <T extends Comparable<Contact>>{
             current = head = temp; 
 
         else { 
-           
-            Node<Contact> current = head;
+           findFirst();
             Node<Contact> tail = null;
             while (current != null && current.data.getContact_name().compareTo(data.getContact_name()) < 0) {
             	tail = current;
