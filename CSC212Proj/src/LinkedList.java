@@ -2,6 +2,7 @@
 public class LinkedList <T extends Comparable<Contact>>{
     private Node<Contact> head;
     private Node<Contact> current;
+	LinkedListEvent event = new LinkedListEvent();
 
     public LinkedList() {
         head = current = null;

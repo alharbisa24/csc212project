@@ -179,6 +179,7 @@ conts.findNext();
 
 					break;
 				case 3:
+					// delete contact and events of there in big events list (in phonebook class)
 					break;
 				case 4:
 				
