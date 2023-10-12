@@ -22,7 +22,9 @@ public class LinkedListEvent <T extends Comparable<Event>> {
     public void findFirst() {
         current = head; 
     }
-
+    public void findPrevious() {
+        current = current.previous;
+    }
     
     public void findNext() {
         current = current.next; 
@@ -43,29 +45,31 @@ public class LinkedListEvent <T extends Comparable<Event>> {
             current = head = temp; 
 
         else { 
-        	temp = current.next;
-        	current.next = new Node<Event> (data);
-        	current = current.next;
-        	current.next= temp;
+        	temp.next = current.next;
+        	temp.previous = current;
+        	if(current.next != null)
+        		current.next.previous = temp;
+        	current.next = temp;
+        	current = temp;
             }
     } 
     
     public void remove() {
-        if (current == head)
-            head = head.next;
-        else {
-            Node<Event> tmp = head;
-            while (tmp.next != current) {
-            	tmp = tmp.next;
-            }
-
-            tmp.next = current.next;
+        if(current == head) {
+     head = head.next;
+        if(head !=null)
+     	   head.previous = null;
         }
-
-        if (current.next == null)
-            current = head;
+        else {
+     	   current.previous.next = current.next;
+     	   if(current.next != null)
+     		   current.next.previous= current.previous;
+        }
+        if(current.next == null)
+     	   current = head;
         else
-            current.next = current.next;
-    }
-
+     	   current = current.next;
+        
+     }
+     
 }

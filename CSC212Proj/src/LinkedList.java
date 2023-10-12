@@ -27,7 +27,9 @@ public class LinkedList <T extends Comparable<Contact>>{
     public void findNext() {
         current = current.next;
     }
-
+    public void findPrevious() {
+        current = current.previous;
+    }
     public Contact retrieve() {
         return current.data; 
     }
@@ -43,31 +45,34 @@ public class LinkedList <T extends Comparable<Contact>>{
             current = head = temp; 
 
         else { 
-        	temp = current.next;
-        	current.next = new Node<Contact> (data);
-        	current = current.next;
-        	current.next= temp;
+        	temp.next = current.next;
+        	temp.previous = current;
+        	if(current.next != null)
+        		current.next.previous = temp;
+        	current.next = temp;
+        	current = temp;
             }
     }
     
     public void remove() {
-        if (current == head)
-            head = head.next;
-        else {
-            Node<Contact> tmp = head;
-            while (tmp.next != current) {
-            	tmp = tmp.next;
-            }
-
-            tmp.next = current.next;
-        }
-
-        if (current.next == null)
-            current = head;
-        else
-            current.next = current.next;
+       if(current == head) {
+    head = head.next;
+       if(head !=null)
+    	   head.previous = null;
+       }
+       else {
+    	   current.previous.next = current.next;
+    	   if(current.next != null)
+    		   current.next.previous= current.previous;
+       }
+       if(current.next == null)
+    	   current = head;
+       else
+    	   current = current.next;
+       
     }
-
-
-
+    
+    
+    
+    
 }

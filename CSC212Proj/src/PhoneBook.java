@@ -69,18 +69,22 @@ return;
 		while (!conts.last()) {
 System.out.print("Name:" + conts.retrieve().getContact_name()
 		+ "\nPhone Number:" + conts.retrieve().getContact_number()
-		+ "Email Address:" + conts.retrieve().getContact_mail()
-		+ "Address: " + conts.retrieve().getContact_address()
-		+ "Birthday:" + conts.retrieve().getContact_birthDay()
-		+ "Notes:" + conts.retrieve().getContact_notes());
+		+ "\nEmail Address:" + conts.retrieve().getContact_mail()
+		+ "\nAddress: " + conts.retrieve().getContact_address()
+		+ "\nBirthday:" + conts.retrieve().getContact_birthDay()
+		+ "\nNotes:" + conts.retrieve().getContact_notes());
+System.out.print("\n");
+
 conts.findNext();
 		}
 		System.out.print("Name:" + conts.retrieve().getContact_name()
 				+ "\nPhone Number:" + conts.retrieve().getContact_number()
-				+ "Email Address:" + conts.retrieve().getContact_mail()
-				+ "Address: " + conts.retrieve().getContact_address()
-				+ "Birthday:" + conts.retrieve().getContact_birthDay()
-				+ "Notes:" + conts.retrieve().getContact_notes());
+				+ "\nEmail Address:" + conts.retrieve().getContact_mail()
+				+ "\nAddress: " + conts.retrieve().getContact_address()
+				+ "\nBirthday:" + conts.retrieve().getContact_birthDay()
+				+ "\nNotes:" + conts.retrieve().getContact_notes());
+		System.out.print("\n");
+
 	}
 	}
 
@@ -93,15 +97,17 @@ conts.findNext();
 		while (!events.last()) {
 
 			System.out.println("Event title:" + events.retrieve().getEvent_title());
-			System.out.println("Contact name:" + events.retrieve().Contact.getContact_name());
-			System.out.println("Event date and time:" + events.retrieve().getEvent_date_time());
-			System.out.println("Event location:" + events.retrieve().getEvent_location());
+			System.out.println("\nContact name:" + events.retrieve().Contact.getContact_name());
+			System.out.println("\nEvent date and time:" + events.retrieve().getEvent_date_time());
+			System.out.println("\nEvent location:" + events.retrieve().getEvent_location());
+			System.out.print("\n");
 			events.findNext();
 		}
 		System.out.println("Event title:" + events.retrieve().getEvent_title());
-		System.out.println("Contact name:" + events.retrieve().Contact.getContact_name());
-		System.out.println("Event date and time:" + events.retrieve().getEvent_date_time());
-		System.out.println("Event location:" + events.retrieve().getEvent_location());
+		System.out.println("\nContact name:" + events.retrieve().Contact.getContact_name());
+		System.out.println("\nEvent date and time:" + events.retrieve().getEvent_date_time());
+		System.out.println("\nEvent location:" + events.retrieve().getEvent_location());
+		System.out.print("\n");
 		}
 
 	public static void main(String[] args) {
