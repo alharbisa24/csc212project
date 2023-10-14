@@ -25,7 +25,9 @@ public class LinkedListEvent <T extends Comparable<Event>> {
     public void findPrevious() {
         current = current.previous;
     }
-    
+    public boolean findlast() {
+		return current == null;
+	}
     public void findNext() {
         current = current.next; 
     }
@@ -38,7 +40,19 @@ public class LinkedListEvent <T extends Comparable<Event>> {
         current.data = data; 
     }
 
- 
+	public boolean search(Event val) {
+		if (empty()) {
+			return false;
+		}
+		Node<Event> object = head;
+		while ((object != null) && (object.data.compareTo(val) != 0))
+			object = object.next;
+		if ((object != null) && (object.data.compareTo(val) == 0)) {
+			current = object;
+			return true;
+		}
+		return false;
+	}
     public void insert(Event data) {
         Node<Event> temp = new Node<Event>(data); 
         if (empty()) 
@@ -63,22 +77,26 @@ public class LinkedListEvent <T extends Comparable<Event>> {
             }
             
     }
-    public void remove() {
-        if(current == head) {
-     head = head.next;
-        if(head !=null)
-     	   head.previous = null;
-        }
-        else {
-     	   current.previous.next = current.next;
-     	   if(current.next != null)
-     		   current.next.previous= current.previous;
-        }
-        if(current.next == null)
-     	   current = head;
-        else
-     	   current = current.next;
-        
-     }
+	public Event remove(Event val) {// remove node
+		if (search(val) == false) {
+			return null;
+		}
+		Event data = current.data;
+		if (current == head)
+			head = head.next;
+		else {
+			Node<Event> tmp = head;
+			while (tmp.next != current)
+				tmp = tmp.next;
+			tmp.next = current.next;
+		}
+		if (current.next == null)
+			current = head;
+		else
+			current = current.next;
+		return data;
+
+	}
+    
      
 }

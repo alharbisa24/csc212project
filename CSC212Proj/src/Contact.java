@@ -1,29 +1,34 @@
+import java.util.Date;
+
 public class Contact implements Comparable<Contact> {
 	private String contact_name;
-	private int contact_number;
+	private String contact_number;
 	private String contact_mail;
 	private String contact_address;
-	private String contact_birthDay;
+	private Date contact_birthDay;
 	private String contact_notes;
-	LinkedListEvent events;
+	LinkedList<Event>event;
 
+	public Contact() {
+		this.contact_birthDay = null;
+	}
 
-	public Contact(String contact_name, int contact_number, String contact_mail, String contact_address,
-			String contact_birthDay, String contact_notes) {
+	public Contact(String contact_name, String contact_number, String contact_mail, String contact_address,
+			Date contact_birthDay, String contact_notes) {
 		this.contact_name = contact_name;
 		this.contact_number = contact_number;
 		this.contact_mail = contact_mail;
 		this.contact_address = contact_address;
 		this.contact_birthDay = contact_birthDay;
 		this.contact_notes = contact_notes;
-		events = new LinkedListEvent();
+		event = new LinkedList<Event>();
 	}
 
 	public void setContact_name(String contact_name) {
 		this.contact_name = contact_name;
 	}
 
-	public void setContact_number(int contact_number) {
+	public void setContact_number(String contact_number) {
 		this.contact_number = contact_number;
 	}
 
@@ -35,7 +40,7 @@ public class Contact implements Comparable<Contact> {
 		this.contact_address = contact_address;
 	}
 
-	public void setContact_birthDay(String contact_birthDay) {
+	public void setContact_birthDay(Date contact_birthDay) {
 		this.contact_birthDay = contact_birthDay;
 	}
 
@@ -48,7 +53,7 @@ public class Contact implements Comparable<Contact> {
 		return contact_name;
 	}
 
-	public int getContact_number() {
+	public String getContact_number() {
 		return contact_number;
 	}
 
@@ -60,7 +65,7 @@ public class Contact implements Comparable<Contact> {
 		return contact_address;
 	}
 
-	public String getContact_birthDay() {
+	public Date getContact_birthDay() {
 		return contact_birthDay;
 	}
 
