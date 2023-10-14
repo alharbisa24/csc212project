@@ -2,6 +2,7 @@
 public class LinkedList <T extends Comparable<T>>{
     private Node<T> head;
     private Node<T> current;
+	public Node<T> previous;
 
     public LinkedList() {
         head = current = null; //1
@@ -58,15 +59,15 @@ public class LinkedList <T extends Comparable<T>>{
 			} else {
 				current = head;
 				while ((current != null) && (current.data.compareTo(val) <= 0)) {// O(n)
-					current.previous = current;
+					previous = current;
 					current = current.next;
 				}
 				if (current != null) {
 					tmp.next = current;
-					current.previous.next = tmp;
+					previous.next = tmp;
 					current = tmp;
 				} else {
-					current = current.previous.next = tmp;
+					current = previous.next = tmp;
 				}
 			}
 		}

@@ -348,7 +348,7 @@ conts.findNext();
 						System.out.print("Contact is already exists! ");
 						
 						System.out.print("\nEnter contact's name: ");
-						 contact_name = input.nextLine();
+						 contact_name = input.next();
 
 					}
 			
