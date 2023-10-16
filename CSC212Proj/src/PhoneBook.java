@@ -8,166 +8,179 @@ public class PhoneBook {
 
 	
 	public static void Searchcontact() {
-		System.out.println("Enter search criteria:");
-		System.out.println("1.Name");
-		System.out.println("2.Phone Number");
-		System.out.println("3.Email Address");
-		System.out.println("4.Address");
-		System.out.println("5.Birthday");
-		System.out.print("Enter your choies");
-		int Choice = input.nextInt();
-		if (conts.empty())
-			System.out.println("Contact its empty");
-		else {
-			conts.findFirst();
-			switch (Choice) {
-			case 1: {
-				System.out.print("Enter the contacts name:");
-				String n = input.next();
-				boolean found = false;
-				while (!conts.findlast()) {
-					if (conts.retrieve().getContact_name().equalsIgnoreCase(n)) {
-						System.out.println("Contact found!");
-						System.out.println("Name: " + conts.retrieve().getContact_name());
-						System.out.println("Phone number: " + conts.retrieve().getContact_number());
-						System.out.println("Email address: " + conts.retrieve().getContact_mail());
-						System.out.println("Address: " + conts.retrieve().getContact_address());
-						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());
-						System.out.println("Notes: " + conts.retrieve().getContact_notes());
-found = true;
+		System.out.println("Enter search criteria:"); //1
+		System.out.println("1.Name"); //1
+		System.out.println("2.Phone Number");//1
+		System.out.println("3.Email Address");//1
+		System.out.println("4.Address");//1
+		System.out.println("5.Birthday");//1
+		System.out.print("Enter your choise");//1
+		int Choice = input.nextInt();//1
+		if (conts.empty())//1
+			System.out.println("Contact its empty");//1
+		else {//1
+			conts.findFirst();//1
+			switch (Choice) {//1
+			case 1: {//1
+				System.out.print("Enter the contacts name:");//1
+				String n = input.next();//1
+				boolean found = false;//1
+				while (!conts.findlast()) { // n
+					if (conts.retrieve().getContact_name().equalsIgnoreCase(n)) { // n
+						System.out.println("Contact found!");//n
+						System.out.println("Name: " + conts.retrieve().getContact_name());//n
+						System.out.println("Phone number: " + conts.retrieve().getContact_number());//n
+						System.out.println("Email address: " + conts.retrieve().getContact_mail());//n
+						System.out.println("Address: " + conts.retrieve().getContact_address());//n
+						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());//n
+						System.out.println("Notes: " + conts.retrieve().getContact_notes());//n
+found = true;//n
 						
 					}
-					conts.findNext();
+					conts.findNext();//n
 				}
-				if(found == false)
-					System.out.print("Contact not found !\n");
+				if(found == false)//1
+					System.out.print("Contact not found !\n");//1
 			}
-				break;
+				break;//1
+				
+				// 11n + 20 O(n)
+				
 			case 2: {
-				System.out.println("Enter the contacts phone number");
-				String phonenumber = input.next();
-				boolean found = false;
-				while (!conts.findlast()) {
-					if (conts.retrieve().getContact_number().compareTo(phonenumber) == 0) {
-						System.out.println("Contact found!");
-						System.out.println("Name: " + conts.retrieve().getContact_name());
-						System.out.println("Phone number: " + conts.retrieve().getContact_number());
-						System.out.println("Email address: " + conts.retrieve().getContact_mail());
-						System.out.println("Address: " + conts.retrieve().getContact_address());
-						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());
-						System.out.println("Notes: " + conts.retrieve().getContact_notes());
-					found = true;
+				System.out.println("Enter the contacts phone number");//1
+				String phonenumber = input.next();//1
+				boolean found = false;//1
+				while (!conts.findlast()) { // n
+					if (conts.retrieve().getContact_number().compareTo(phonenumber) == 0) { //n
+						System.out.println("Contact found!");//n
+						System.out.println("Name: " + conts.retrieve().getContact_name());//n
+						System.out.println("Phone number: " + conts.retrieve().getContact_number());//n
+						System.out.println("Email address: " + conts.retrieve().getContact_mail());//n
+						System.out.println("Address: " + conts.retrieve().getContact_address());//n
+						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());//n
+						System.out.println("Notes: " + conts.retrieve().getContact_notes());//n
+					found = true;//n
 					}
-					conts.findNext();
+					conts.findNext();//n
 
 				}
-				if(found == false)
-					System.out.print("Contact not found !\n");
+				if(found == false)//1
+					System.out.print("Contact not found !\n");//1
 			}
-				break;
-
+				break;//1
+				
+				// 11n + 6 O(n)
+				
 			case 3: {
-				System.out.println("Enter the contacts Email Address");
-				String email = input.next();
-				boolean found = false;
-				while (!conts.findlast()) {
-					if (conts.retrieve().getContact_mail().compareTo(email) == 0) {
-						System.out.println("Contact found!");
-						System.out.println("Name: " + conts.retrieve().getContact_name());
-						System.out.println("Phone number: " + conts.retrieve().getContact_number());
-						System.out.println("Email address: " + conts.retrieve().getContact_mail());
-						System.out.println("Address: " + conts.retrieve().getContact_address());
-						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());
-						System.out.println("Notes: " + conts.retrieve().getContact_notes());
-						found = true;
+				System.out.println("Enter the contacts Email Address");//1
+				String email = input.next();//1
+				boolean found = false;//1
+				while (!conts.findlast()) {//n
+					if (conts.retrieve().getContact_mail().compareTo(email) == 0) {//n
+						System.out.println("Contact found!");//n
+						System.out.println("Name: " + conts.retrieve().getContact_name());//n
+						System.out.println("Phone number: " + conts.retrieve().getContact_number());//n
+						System.out.println("Email address: " + conts.retrieve().getContact_mail());//n
+						System.out.println("Address: " + conts.retrieve().getContact_address());//n
+						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());//n
+						System.out.println("Notes: " + conts.retrieve().getContact_notes());//n
+						found = true;//n
 					}
-					conts.findNext();
+					conts.findNext();//n
 				}
-				if(found == false)
-					System.out.print("Contact not found !\n");
+				if(found == false)//1
+					System.out.print("Contact not found !\n");//1
 			}
-				break;
+				break;//1
+				// 11n + 6 O(n)
+				
 			case 4: {
-				System.out.println("Enter contacts address");
-				String address = input.next();
-				boolean found = false;
-				while (!conts.findlast()) {
-					if (conts.retrieve().getContact_address().compareTo(address) == 0) {
-						System.out.println("Contact found!");
-						System.out.println("Name: " + conts.retrieve().getContact_name());
-						System.out.println("Phone number: " + conts.retrieve().getContact_number());
-						System.out.println("Email address: " + conts.retrieve().getContact_mail());
-						System.out.println("Address: " + conts.retrieve().getContact_address());
-						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());
-						System.out.println("Notes: " + conts.retrieve().getContact_notes());
-						found = true;
+				System.out.println("Enter contacts address");//1
+				String address = input.next();//1
+				boolean found = false;//1
+				while (!conts.findlast()) {//n
+					if (conts.retrieve().getContact_address().compareTo(address) == 0) {//n
+						System.out.println("Contact found!");//n
+						System.out.println("Name: " + conts.retrieve().getContact_name());//n
+						System.out.println("Phone number: " + conts.retrieve().getContact_number());//n
+						System.out.println("Email address: " + conts.retrieve().getContact_mail());//n
+						System.out.println("Address: " + conts.retrieve().getContact_address());//n
+						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());//n
+						System.out.println("Notes: " + conts.retrieve().getContact_notes());//n
+						found = true;//n
 					}
-					conts.findNext();
+					conts.findNext();//n
 					
 				}
-				if(found == false)
-					System.out.print("Contact not found !\n");
+				if(found == false)//1
+					System.out.print("Contact not found !\n");//1
 
 			}
-				break;
+				break;//1
+				// 11n + 6 O(n)
+				
 			case 5: {
-				System.out.println("Enter contacts Birthday");
-				Date date = new Date(input.next());
-				boolean found = true;
-				while (!conts.findlast()) {
-					if (conts.retrieve().getContact_birthDay().compareTo(date) == 0) {
-						System.out.println("Contact found!");
-						System.out.println("Name: " + conts.retrieve().getContact_name());
-						System.out.println("Phone number: " + conts.retrieve().getContact_number());
-						System.out.println("Email address: " + conts.retrieve().getContact_mail());
-						System.out.println("Address: " + conts.retrieve().getContact_address());
-						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());
-						System.out.println("Notes: " + conts.retrieve().getContact_notes());
-						found = true;
+				System.out.println("Enter contacts Birthday");//1
+				Date date = new Date(input.next());//1
+				boolean found = true;//1
+				while (!conts.findlast()) {//n
+					if (conts.retrieve().getContact_birthDay().compareTo(date) == 0) {//n
+						System.out.println("Contact found!");//n
+						System.out.println("Name: " + conts.retrieve().getContact_name());//n
+						System.out.println("Phone number: " + conts.retrieve().getContact_number());//n
+						System.out.println("Email address: " + conts.retrieve().getContact_mail());//n
+						System.out.println("Address: " + conts.retrieve().getContact_address());//n
+						System.out.println("Birthday: " + conts.retrieve().getContact_birthDay());//n
+						System.out.println("Notes: " + conts.retrieve().getContact_notes());//n
+						found = true;//n
 					}
-					conts.findNext();
+					conts.findNext();//n
 				}
-				if(found == false)
-					System.out.print("Contact not found !\n");
+				if(found == false)//1
+					System.out.print("Contact not found !\n");//1
 			}
-				break;
+				break;//1
+				// 11n + 6 O(n)
+				
 			}
 
 		}
 	}
 
-	public static void deletcontact(String name) {
-		if (conts.empty())
-			System.out.println("Contact list its empty");
-		else {
-			Contact resultfound = searchByName(name);
-			if(resultfound != null) {
+	//TimeComplexity ( 55n + 35 ) BigO(n)
+	
+	public static void deletcontact(String name) {//1
+		if (conts.empty())//1
+			System.out.println("Contact list its empty");//1
+		else {//1
+			Contact resultfound = searchByName(name); //1
+			if(resultfound != null) {//1
 
-			if(conts.retrieve().event == null || conts.retrieve().event.empty()) { // check if contact have events or not
+			if(conts.retrieve().event == null || conts.retrieve().event.empty()) { // check if contact have events or not (1)
 				
 				
-				conts.remove(resultfound);
-				System.out.println("the contact dont have event");
-				System.out.println("Contact deleted successfully ");
+				conts.remove(resultfound);//1
+				System.out.println("the contact dont have event");//1
+				System.out.println("Contact deleted successfully ");//1
 				
 				
 		
-				} else {
-					conts.retrieve().event.findFirst(); 
-					while (!conts.retrieve().event.findlast()) {
-						Event e = events.retrieve();
-						if (events.search(e)) {
-							events.remove(e);
+				} else {//1
+					conts.retrieve().event.findFirst(); //1
+					while (!conts.retrieve().event.findlast()) {// n
+						Event e = events.retrieve(); //n
+						if (events.search(e)) {//n
+							events.remove(e);//n
 
 						}
-						conts.remove(resultfound);
+						conts.remove(resultfound);//n
 
-						conts.retrieve().event.findNext();
+						conts.retrieve().event.findNext();//n
 					}
 			
 
 					
-					System.out.println("Contact deleted successfully \n");
+					System.out.println("Contact deleted successfully \n");//1
 
 			}
 			
@@ -177,19 +190,19 @@ found = true;
 			
 			
 
-		}else {
+		}else {//1
 			
-			System.out.print("contact not found !\n");
+			System.out.print("contact not found !\n");//1
 		}
 		
 		}
 	}
 	
-		
+		// 6n + 14 O(n)
 		/*
 		 * this method for search in contacts list by name to get object
 		 */
-		public static Contact searchByName(String name) {
+		public static Contact searchByName(String name) {//1
 			/*
 			 * in the first will check if list is empty then return false (not found);
 			 */
@@ -203,31 +216,32 @@ found = true;
 	/*
 	 * here we will check all elements from the first element to before last elemeny (n-1)
 	 */
-			while (!conts.last()) {  // n
+			while (!conts.last()) {  // n-1
 				if (conts.retrieve().getContact_name().equalsIgnoreCase(name)) {  // n
 																				
-					return conts.retrieve();///1
+					return conts.retrieve();//n
 			}
 				conts.findNext(); //n
 
 				}
-			if (conts.retrieve().getContact_name().equalsIgnoreCase(name)) {  // n
+			if (conts.retrieve().getContact_name().equalsIgnoreCase(name)) {  // 1
 				
 				return conts.retrieve();///1
 		}
-			return null;
+			return null;//1
 			}
 			
-	
+	// 4n + 5
+		
 	/*
 	 * this method for search in contacts list by number
 	 */
-	public static boolean search_number(String number) {
+	public static boolean search_number(String number) { //1
 		/*
 		 * in the first will check if list is empty then return false (not found);
 		 */
-		if (conts.empty()) {
-			return false;
+		if (conts.empty()) {//1
+			return false;//1
 		}
 		/*
 		 * current will be in first element in list.
@@ -236,86 +250,91 @@ found = true;
 /*
  * here we will check all elements from the first element to before last elemeny (n-1)
  */
-		while (!conts.last()) { 
-			if (conts.retrieve().getContact_number().equals(number)) { 
+		while (!conts.last()) { //n-1
+			if (conts.retrieve().getContact_number().equals(number)) { //n
 																			
-				return true;
+				return true;//n
 		}
-			conts.findNext(); 
+			conts.findNext(); //n
 
 			}
 		/*
 		 * here we will check last element in the list if it its have same contact number or not
 		 */
-		if (conts.retrieve().getContact_number().equals(number)) { 
-			return true;
+		if (conts.retrieve().getContact_number().equals(number)) { //1
+			return true; //1
 			
 		
 
 	}
 		return false; //1
 	}
+	
+	//4n + 6 O(n)
 
-	public static void print_firstname(String name) {
-		if (conts.empty()) {
+	public static void print_firstname(String name) {//1
+		if (conts.empty()) {//1
 			
-			System.out.println("contacts is empty !");
-			return;
+			System.out.println("contacts is empty !");//1
+			return;//1
 		}
 		
-		if(searchByName(name) == null) {
-			System.out.println("contacts not found !");
-return;
-		}else {
-		conts.findFirst();
+		if(searchByName(name) == null) {//1
+			System.out.println("contacts not found !");//1
+return;//1
+		}else {//1
+		conts.findFirst();//1
 
 
-		while (!conts.last()) {
-			if(conts.retrieve().getContact_name().equalsIgnoreCase(name))
+		while (!conts.last()) {//n-1
+			if(conts.retrieve().getContact_name().equalsIgnoreCase(name))//n
 System.out.print("Name:" + conts.retrieve().getContact_name()
 		+ "\nPhone Number:" + conts.retrieve().getContact_number()
 		+ "\nEmail Address:" + conts.retrieve().getContact_mail()
 		+ "\nAddress: " + conts.retrieve().getContact_address()
 		+ "\nBirthday:" + conts.retrieve().getContact_birthDay()
-		+ "\nNotes:" + conts.retrieve().getContact_notes());
-System.out.print("\n");
+		+ "\nNotes:" + conts.retrieve().getContact_notes()); //n
+System.out.print("\n");//n
 
-conts.findNext();
+conts.findNext();//n
 		}
-		if(conts.retrieve().getContact_name().equalsIgnoreCase(name))
+		if(conts.retrieve().getContact_name().equalsIgnoreCase(name))//1
 		System.out.print("Name:" + conts.retrieve().getContact_name()
 				+ "\nPhone Number:" + conts.retrieve().getContact_number()
 				+ "\nEmail Address:" + conts.retrieve().getContact_mail()
 				+ "\nAddress: " + conts.retrieve().getContact_address()
 				+ "\nBirthday:" + conts.retrieve().getContact_birthDay()
 				+ "\nNotes:" + conts.retrieve().getContact_notes());
-		System.out.print("\n");
+		System.out.print("\n");//1
 
 	}
 	}
 	
+	//5n + 10 O(n)
+	
+	public static void print_alph() {//1
+		if (events.empty()) {//1
+			System.out.println("There are no events\n");//1
+			return; //1
+		}
+		events.findFirst();//1
+		while (!events.last()) {//n-1
 
-	public static void print_alph() {
-		if (events.empty()) {
-			System.out.println("There are no events\n");
-			return; 
+			System.out.println("Event title:" + events.retrieve().getEvent_title());//n
+			System.out.println("\nContact name:" + events.retrieve().Contact.getContact_name());//n
+			System.out.println("\nEvent date and time:" + events.retrieve().getEvent_date_time());//n
+			System.out.println("\nEvent location:" + events.retrieve().getEvent_location());//n
+			System.out.print("\n");//n
+			events.findNext();//n
 		}
-		events.findFirst();
-		while (!events.last()) {
-
-			System.out.println("Event title:" + events.retrieve().getEvent_title());
-			System.out.println("\nContact name:" + events.retrieve().Contact.getContact_name());
-			System.out.println("\nEvent date and time:" + events.retrieve().getEvent_date_time());
-			System.out.println("\nEvent location:" + events.retrieve().getEvent_location());
-			System.out.print("\n");
-			events.findNext();
+		System.out.println("Event title:" + events.retrieve().getEvent_title());//1
+		System.out.println("\nContact name:" + events.retrieve().Contact.getContact_name());//1
+		System.out.println("\nEvent date and time:" + events.retrieve().getEvent_date_time());//1
+		System.out.println("\nEvent location:" + events.retrieve().getEvent_location());//1
+		System.out.print("\n");//1
 		}
-		System.out.println("Event title:" + events.retrieve().getEvent_title());
-		System.out.println("\nContact name:" + events.retrieve().Contact.getContact_name());
-		System.out.println("\nEvent date and time:" + events.retrieve().getEvent_date_time());
-		System.out.println("\nEvent location:" + events.retrieve().getEvent_location());
-		System.out.print("\n");
-		}
+	
+	// 7n + 9
 
 	public static void main(String[] args) {
 
@@ -351,7 +370,7 @@ conts.findNext();
 						 contact_name = input.next();
 
 					}
-			
+			input.nextLine();
 					System.out.print("Enter the contact's phone number: ");
 					String contact_phone = input.next();
 					
@@ -369,8 +388,15 @@ conts.findNext();
 					String contact_address = input.next();
 					
 					System.out.print("Enter the contact's birthday: ");
-					Date contact_birthday = new Date(input.next());
+					Date contact_birthday = null;
+					boolean accepted=false;
+					try {
+					contact_birthday = new Date(input.next());
+					}catch(IllegalArgumentException i) {
+						System.out.print("date is not correct, please enter correct date. \n");
+						break;
 					
+					}
 					System.out.print("Enter any notes for the contact: ");
 					String contact_note = input.next();
 
@@ -387,7 +413,6 @@ conts.findNext();
 
 					break;
 				case 3:
-					// delete contact and events of there in big events list (in phonebook class)
 					
 					System.out.print("Enter Contact name: ");
 					String cont_delete_name = input.next();
@@ -398,7 +423,6 @@ conts.findNext();
 					break;
 			
 				case 5:
-					
 					break;
 				case 6:
 					
