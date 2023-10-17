@@ -306,7 +306,7 @@ found = true;//n
 				
 				events.insert(e);                                                                     //1             1    1
 							
-			}                                                                                           //Total = 4n + 5n      is O(n)
+			}                                                                                           //Total = 4n + 5    is O(n)
 			
 			
 	}
