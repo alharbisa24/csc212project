@@ -311,6 +311,129 @@ found = true;//n
 			
 	}
 }
+
+
+	
+	
+	 
+	 
+	                                                                                                                               //Time Complexity  S/E        Freq           Total
+	public void printEventDetails() {                                                                                                //0          0               0                            
+		System.out.println("Enter search criteria:");                                                                               //1          1               1 
+		System.out.println("1.contact name: ");                                                                                     //1          1               1
+		System.out.println("2.Event Title: ");                                                                                      //1          1               1 
+		System.out.println();                                                                                                       //1          1               1
+		System.out.print("Enter your choice: ");                                                                                    //1          1               1
+		int eventChoice = input.nextInt();                                                                                          //1          1               1
+		
+		if(conts.empty())                                                                                                           //1          1               1 
+		{
+			System.out.println("Sorry there is no contact");                                                                        //1          1               1 
+			return;
+		}
+		
+		else {
+			switch(eventChoice) {                                                                                                   //1           1              1
+			
+			case 1: 
+				System.out.print("Enter contact name: ");                                                                          //1            1              1                                            
+			    String eventContactName = input.next();                                                                            //1            1              1 
+			
+				
+				boolean foundCon = false;                                                                                          //1            1              1 
+				conts.findFirst();                                                                                                 //1            1              1 
+				while(!conts.last()) {                                                                                             //1            n              n
+					if(conts.retrieve().getContact_name().equalsIgnoreCase(contactName)) {                                         //1           n-1            n-1 
+						System.out.println("Event found!");                                                                        //1           n-1            n-1 
+						System.out.println("Event title: " + events.retrieve().getEvent_title());                                  //1           n-1            n-1 
+						System.out.println("contact name:"+ conts.retrieve().getName());                                           //1           n-1            n-1 
+						System.out.println("Event date and time (MM/DD/YYYY HH:MM):"+ events.retrieve.getEvent_date_time());       //1           n-1            n-1 
+						System.out.println("Event location: "+ events.retrieve.getEvent_location());                               //1           n-1            n-1 
+					    foundCon = true;                                                                                           //1           n-1            n-1 
+					}
+					conts.findNext();                                                                                              //1           n-1            n-1 
+				}
+				
+				if(conts.retrieve().getContact_name().equalsIgnoreCase(contactName)) {                                             //1             1              1 
+ 					System.out.println("Event found!");                                                                            //1             1              1 
+					System.out.println("Event title: " + events.retrieve().getEvent_title());                                      //1             1              1 
+					System.out.println("contact name:"+ conts.retrieve().getName());                                               //1             1              1 
+					System.out.println("Event date and time (MM/DD/YYYY HH:MM):"+ events.retrieve.getEvent_date_time());           //1             1              1 
+					System.out.println("Event location: "+ events.retrieve.getEvent_location());                                   //1             1              1 
+					found = true;                                                                                                  //1             1              1 
+					
+				
+			}
+				
+				if(found == false)                                                                                                 //1             1              1 
+					System.out.println("Sorry there is No event");                                                                 //1             1              1 
+				
+				break;                                                                                                             
+			
+			
+			case 2: 
+				System.out.print("Enter the event title: ");                                                                       //1             1              1 
+			    String eventTitle = input.next();                                                                                  //1             1              1 
+			
+			 
+				  if(events.empty()) {                                                                                             //1             1              1 
+					  System.out.println("Sorry No Event ");                                                                       //1             1              1 
+					  return;
+				  }
+				 
+					  boolean found = false;                                                                                       //1             1              1 
+					  events.findFirst();                                                                                          //1             1              1 
+					  while(!events.last()) {                                                                                      //1             n              n
+						  if(events.getEvent_title().equalsIgnoreCase(eventTitle)) {                                               //1            n-1            n-1 
+							  System.out.println("Event found!");                                                                      //1            n-1            n-1 
+								System.out.println("Event title: " + events.retrieve().getEvent_title());                          //1            n-1            n-1 
+								System.out.println("contact name:"+ conts.retrieve().getName());                                   //1            n-1            n-1 
+								System.out.println("Event date and time (MM/DD/YYYY HH:MM):"+ events.retrieve.getEvent_date_time());//1           n-1            n-1 
+								System.out.println("Event location: "+ events.retrieve.getEvent_location());                        //1           n-1            n-1  
+								found = true;                                                                                       //1           n-1            n-1   
+							  
+						  }
+ 						  events.findNext();                                                                                            //1           n-1            n-1 
+							  
+					  }
+					  
+					  if(events.getEvent_title().equalsIgnoreCase(eventTitle)) {                                                           // 1             1              1 
+						  System.out.println("Event found!");                                                                          //1              1              1 
+							System.out.println("Event title: " + events.retrieve().getEvent_title());                              //1              1              1 
+							System.out.println("contact name:"+ conts.retrieve().getName());                                       //1              1              1 
+							System.out.println("Event date and time (MM/DD/YYYY HH:MM):"+ events.retrieve.getEvent_date_time());   //1              1              1 
+							System.out.println("Event location: "+ events.retrieve.getEvent_location());                           //1              1              1 
+							found = true;                                                                                          //1              1              1 
+				  }
+					  
+					  if(found == false)                                                                                                    //1              1              1 
+							System.out.println("Sorry there is No event");                                                         //1              1              1 
+						 
+						break;
+					  
+			
+				
+		}                                                                                                                                             //total = 18n + 12 is O(n)
+			
+   }
+		
+		
+		
+}
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
 	
 	
 	public static void print_firstname(String name) {//1
