@@ -1,4 +1,17 @@
+/*************Example***************
+CLASS: Event.java
+CSC212 Data structures - Project phase I
+Fall 2023
+EDIT DATE:
+8-10-2023
+TEAM:
+IT PhoneBook
+AUTHORS:
+meshari al-harbi , (443102229)
+saud al-dossaari (441102913)
+Omar al-juwayr (443101386)
 
+***********************************/
 public class Event implements Comparable<Event> {
 	private String event_title;
 	private String event_date_time;

@@ -1,3 +1,17 @@
+/*************Example***************
+CLASS: Contact.java
+CSC212 Data structures - Project phase I
+Fall 2023
+EDIT DATE:
+8-10-2023
+TEAM:
+IT PhoneBook
+AUTHORS:
+meshari al-harbi , (443102229)
+saud al-dossaari (441102913)
+Omar al-juwayr (443101386)
+
+***********************************/
 import java.util.Date;
 
 public class Contact implements Comparable<Contact> {
@@ -72,10 +86,10 @@ public class Contact implements Comparable<Contact> {
 	public String getContact_notes() {
 		return contact_notes;
 	}
-
+@Override
 	public int compareTo(Contact o) {
-		return this.contact_name.compareTo(o.contact_name); 
+		return this.contact_name.compareTo(o.contact_name); //1
 	}
-
+// 1 O(1)
 	
 }
