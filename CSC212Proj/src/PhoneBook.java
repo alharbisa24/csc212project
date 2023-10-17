@@ -272,6 +272,47 @@ found = true;//n
 	
 	//4n + 6 O(n)
 
+
+	 //this method for schecule an Event                                                 time complexity      S/E      Freq      Total
+	 public static void shceduleEvent(Event e) {                                                             //0       0           0 
+		
+		if(conts.empty() == true)                                                                        //1         1         1 
+		{                                                                                                //0         0         0
+			System.out.print("No contacts found");                                                   //1         1         1 
+			return; 
+		}
+		
+		else {
+			if(Events.empty()) {                                                                       //1          1       1 
+				events.insert(e);                                                                  //1          1       1 
+			return; 
+			}else {
+				events.findFirst();                                                                 //1           1     1 
+			while(!events.last()) {                                                                     //1           n     n
+				if(events.retrieve().getEvent_date_time().equalIgnoreCase(e.getEvent_date_time()))  //1           n-1   n-1           
+					{
+						System.out.println("Sorry there is event this time");                //1          n-1    n-1             
+						return;
+					}                         
+					
+					events.findNext();                                                            //1         n-1    n-1                                                                                          
+					
+				}
+				if(events.retrieve().getEvent_date_time().equalIgnoreCase(e.getEvent_date_time()))    //1            1     1 
+				{
+					System.out.println("Sorry there is event this time");                         //1            1     1 
+					return; 
+				}
+				
+				events.insert(e);                                                                     //1             1    1
+							
+			}                                                                                           //Total = 4n + 5n      is O(n)
+			
+			
+	}
+}
+	
+	
 	public static void print_firstname(String name) {//1
 		if (conts.empty()) {//1
 			
