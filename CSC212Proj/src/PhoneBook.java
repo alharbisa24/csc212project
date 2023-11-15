@@ -9,7 +9,7 @@ IT PhoneBook
 AUTHORS:
 meshari al-harbi , (443102229)
 saud al-dossaari (441102913)
-Omar al-juwayr (443101386)
+Omar al-juwayr (443101385)
 
 ***********************************/
 import java.util.Date;
@@ -31,7 +31,8 @@ public class PhoneBook {
 		System.out.println("4.Address");//1
 		System.out.println("5.Birthday");//1
 		System.out.print("Enter your choise");//1
-		int Choicec = input.nextInt();//1
+		String Choicec = input.nextLine();//1
+		
 
 		if (conts.empty())//if contact list is empty (1)
 			System.out.println("Contact its empty");//1
@@ -39,17 +40,16 @@ public class PhoneBook {
 			// user choose the serach criteria
 			switch (Choicec) {//1
 			// if user want search by name
-			case 1: {//1
+			case "1": {//1
 				// set the current in first element of contact list.
 				conts.findFirst();//1
 				System.out.print("Enter the contacts name:");//1
-				input.nextLine(); //1
 				String n = input.nextLine();//1
 				boolean found = false;//1
 				// check in contact list
 				while (!conts.last()) { // n-1
 				// if contact name has same name that user want search it print contact details.
-					if (conts.retrieve().getContact_name().equalsIgnoreCase(n)) { // n
+					if (conts.retrieve().getContact_name().compareTo(n) == 0) { // n
 						System.out.println("Contact found!");//n
 						System.out.println("Name: " + conts.retrieve().getContact_name());//n
 						System.out.println("Phone number: " + conts.retrieve().getContact_number());//n
@@ -66,7 +66,7 @@ public class PhoneBook {
 				}
 				// check the last element in contact list
 				// if contact name has same name that user want search it print contact details.
-				if (conts.retrieve().getContact_name().equalsIgnoreCase(n)) { // 1
+				if (conts.retrieve().getContact_name().compareTo(n) == 0) { // 1
 					System.out.println("Contact found!");//1
 					System.out.println("Name: " + conts.retrieve().getContact_name());//1
 					System.out.println("Phone number: " + conts.retrieve().getContact_number());//1
@@ -86,11 +86,11 @@ public class PhoneBook {
 				
 				// 11n + 30 O(n)
 				// if user want search by phone number
-			case 2: {
+			case "2": {
 				// set the current in first element of contact list.
 				conts.findFirst();//1
 				System.out.println("Enter the contacts phone number");//1
-				String phonenumber = input.next();//1
+				String phonenumber = input.nextLine();//1
 				boolean found = false;//1
 				// check contact list
 				while (!conts.last()) { // n-1
@@ -131,11 +131,11 @@ public class PhoneBook {
 				
 				// 11n + 15 O(n)
 				// if user want search by email address
-			case 3: {
+			case "3": {
 				// set the current in first element of contact list.
 				conts.findFirst();//1
 				System.out.println("Enter the contacts Email Address");//1
-				String email = input.next();//1
+				String email = input.nextLine();//1
 				boolean found = false;//1
 				// check contact list
 				while (!conts.last()) {//n-1
@@ -174,11 +174,11 @@ public class PhoneBook {
 				break;//1
 				// 11n + 15 O(n)
 				// if user want search by address
-			case 4: {
+			case "4": {
 				// set the current in first element of contact list.
 				conts.findFirst();//1
 				System.out.println("Enter contacts address");//1
-				String address = input.next();//1
+				String address = input.nextLine();//1
 				boolean found = false;//1
 				// check contact list
 				while (!conts.last()) {//n-1
@@ -217,7 +217,7 @@ public class PhoneBook {
 				break;//1
 				// 11n + 15 O(n)
 				// if user want search by birthday date
-			case 5: {
+			case "5": {
 				// set the current in first element of contact list.
 				conts.findFirst();//1
 				System.out.println("Enter contacts Birthday");//1
@@ -259,9 +259,9 @@ public class PhoneBook {
 			}
 				break;//1
 				// 11n + 75 O(n)
-				
-			}
-
+				default:
+					System.out.print("plesae enter valid input");
+}
 		}
 	}
 
@@ -294,7 +294,7 @@ public class PhoneBook {
 				// check elements in events list
 				while (!events.last()) {//n-1
 					// if event has same contact name that user enter.
-					if (events.retrieve().Contact.getContact_name().equalsIgnoreCase(n)) {//n
+					if (events.retrieve().Contact.getContact_name().compareTo(n) == 0) {//n
 						System.out.println("Event found!\r\n");//n
 						System.out.println("Event title:" + events.retrieve().getEvent_title());//n
 						System.out.println("Contact name:" + events.retrieve().Contact.getContact_name());//n
@@ -310,7 +310,7 @@ public class PhoneBook {
 				}
 				// check the last element in event list
 				// if event has same contact name that user enter.
-				if (events.retrieve().Contact.getContact_name().equalsIgnoreCase(n)) {//1
+				if (events.retrieve().Contact.getContact_name().compareTo(n) == 0) {//1
 					System.out.println("Event found!\r\n");//1
 					System.out.println("Event title:" + events.retrieve().getEvent_title());//1
 					System.out.println("Contact name:" + events.retrieve().Contact.getContact_name());//1
@@ -615,7 +615,16 @@ conts.findNext();//n
 			}
 			
 			System.out.println("Enter event date and time (MM/DD/YYYY HH:MM):");//1
-			String event_datetime =input.nextLine();//1
+			Date event_datetime;
+
+			try {
+				 event_datetime = new Date(input.nextLine());//1
+				}catch(IllegalArgumentException i) {
+					System.out.print("date is not correct, enter correct date \n");//1
+					 event_datetime = new Date(input.nextLine());//1
+
+				
+				}
 			
 			System.out.println("Enter event location:");//1
 			String event_location=input.nextLine();		//1
@@ -721,7 +730,7 @@ conts.findNext();//n
 						try {
 					        contact_birthday = new Date(input.nextLine());
 							}catch(IllegalArgumentException i) {
-								System.out.print("date is not correct, please enter correct date. \n");
+								System.out.print("date is not correct \n");
 								break;
 							
 							}

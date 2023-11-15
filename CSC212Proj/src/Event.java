@@ -1,3 +1,5 @@
+import java.util.Date;
+
 /*************Example***************
 CLASS: Event.java
 CSC212 Data structures - Project phase I
@@ -9,19 +11,19 @@ IT PhoneBook
 AUTHORS:
 meshari al-harbi , (443102229)
 saud al-dossaari (441102913)
-Omar al-juwayr (443101386)
+Omar al-juwayr (443101385)
 
 ***********************************/
 public class Event implements Comparable<Event> {
 	private String event_title;
-	private String event_date_time;
+	private Date event_date_time;
 	private String event_location;
 	public Contact Contact;
 
 	
 
 
-	public Event(String event_title, String event_date_time, String event_location, Contact contact) {
+	public Event(String event_title, Date event_date_time, String event_location, Contact contact) {
 		this.event_title = event_title;
 		this.event_date_time = event_date_time;
 		this.event_location = event_location;
@@ -32,7 +34,7 @@ public class Event implements Comparable<Event> {
 		return event_title;
 	}
 
-	public String getEvent_date_time() {
+	public Date getEvent_date_time() {
 		return event_date_time;
 	}
 	
